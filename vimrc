@@ -329,7 +329,7 @@
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'tpope/vim-dispatch'
-    NeoBundle 'tpope/vim-eunuch'
+    " NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-unimpaired' "{{{
       nmap <c-up> [e
       nmap <c-down> ]e
@@ -670,11 +670,11 @@
       let g:startify_show_sessions = 1
       nnoremap <F1> :Startify<cr>
     "}}}
-    NeoBundle 'scrooloose/syntastic' "{{{
-      let g:syntastic_error_symbol = '✗'
-      let g:syntastic_style_error_symbol = '✠'
-      let g:syntastic_warning_symbol = '∆'
-      let g:syntastic_style_warning_symbol = '≈'
+    " NeoBundle 'scrooloose/syntastic' "{{{
+    "  let g:syntastic_error_symbol = '✗'
+    "  let g:syntastic_style_error_symbol = '✠'
+    "  let g:syntastic_warning_symbol = '∆'
+    "  let g:syntastic_style_warning_symbol = '≈'
     "}}}
     NeoBundleLazy 'mattn/gist-vim', { 'depends': 'mattn/webapi-vim', 'autoload': { 'commands': 'Gist' } } "{{{
       let g:gist_post_private=1
