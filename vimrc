@@ -1,4 +1,4 @@
-" vim: fdm=marker ts=2 sts=2 sw=2 fdl=0
+" vim: fdm=marker ts=4 sts=4 sw=4 fdl=0
 
 " detect OS {{{
   let s:is_windows = has('win32') || has('win64')
