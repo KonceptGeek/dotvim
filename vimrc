@@ -39,7 +39,6 @@
     call add(s:settings.plugin_groups, 'core')
     call add(s:settings.plugin_groups, 'web')
     call add(s:settings.plugin_groups, 'javascript')
-    call add(s:settings.plugin_groups, 'ruby')
     call add(s:settings.plugin_groups, 'python')
     call add(s:settings.plugin_groups, 'scala')
     call add(s:settings.plugin_groups, 'go')
@@ -57,7 +56,7 @@
 
     " exclude all language-specific plugins by default
     if !exists('g:dotvim_settings.plugin_groups_exclude')
-      let g:dotvim_settings.plugin_groups_exclude = ['web','javascript','ruby','python','go','scala']
+      let g:dotvim_settings.plugin_groups_exclude = ['web','javascript','python','go','scala']
     endif
     for group in g:dotvim_settings.plugin_groups_exclude
       let i = index(s:settings.plugin_groups, group)
@@ -387,10 +386,10 @@
     NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
     NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','typescript']}}
   endif "}}}
-  if count(s:settings.plugin_groups, 'ruby') "{{{
-    NeoBundle 'tpope/vim-rails'
-    NeoBundle 'tpope/vim-bundler'
-  endif "}}}
+"  if count(s:settings.plugin_groups, 'ruby') "{{{
+"    NeoBundle 'tpope/vim-rails'
+"    NeoBundle 'tpope/vim-bundler'
+"  endif "}}}
   if count(s:settings.plugin_groups, 'python') "{{{
     NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}} "{{{
       let g:pymode_rope=0
@@ -403,10 +402,10 @@
     NeoBundle 'derekwyatt/vim-scala'
     NeoBundle 'megaannum/vimside'
   endif "}}}
-  if count(s:settings.plugin_groups, 'go') "{{{
-    NeoBundleLazy 'jnwhiteh/vim-golang', {'autoload':{'filetypes':['go']}}
-    NeoBundleLazy 'nsf/gocode', {'autoload': {'filetypes':['go']}, 'rtp': 'vim'}
-  endif "}}}
+"  if count(s:settings.plugin_groups, 'go') "{{{
+"    NeoBundleLazy 'jnwhiteh/vim-golang', {'autoload':{'filetypes':['go']}}
+"    NeoBundleLazy 'nsf/gocode', {'autoload': {'filetypes':['go']}, 'rtp': 'vim'}
+"  endif "}}}
   if count(s:settings.plugin_groups, 'scm') "{{{
     NeoBundle 'mhinz/vim-signify' "{{{
       let g:signify_update_on_bufenter=0
@@ -517,12 +516,12 @@
       nnoremap <leader>vo :GrepOptions<cr>
     "}}}
     NeoBundle 'ctrlpvim/ctrlp.vim', { 'depends': 'tacahiroy/ctrlp-funky' } "{{{
-      let g:ctrlp_clear_cache_on_exit=1
+      let g:ctrlp_clear_cache_on_exit=0
       let g:ctrlp_max_height=40
       let g:ctrlp_show_hidden=0
       let g:ctrlp_follow_symlinks=1
       let g:ctrlp_max_files=20000
-      let g:ctrlp_cache_dir=s:get_cache_dir('ctrlp')
+      let g:ctrlp_cache_dir= s:get_cache_dir('ctrlp')
       let g:ctrlp_reuse_window='startify'
       let g:ctrlp_extensions=['funky']
       let g:ctrlp_custom_ignore = {
@@ -703,12 +702,12 @@
       nmap <F4> <Plug>ToggleGoldenViewAutoResize
     "}}}
   endif "}}}
-  if count(s:settings.plugin_groups, 'windows') "{{{
-    NeoBundleLazy 'PProvost/vim-ps1', {'autoload':{'filetypes':['ps1']}} "{{{
-      autocmd BufNewFile,BufRead *.ps1,*.psd1,*.psm1 setlocal ft=ps1
-    "}}}
-    NeoBundleLazy 'nosami/Omnisharp', {'autoload':{'filetypes':['cs']}}
-  endif "}}}
+"  if count(s:settings.plugin_groups, 'windows') "{{{
+"    NeoBundleLazy 'PProvost/vim-ps1', {'autoload':{'filetypes':['ps1']}} "{{{
+"      autocmd BufNewFile,BufRead *.ps1,*.psd1,*.psm1 setlocal ft=ps1
+"    "}}}
+"    NeoBundleLazy 'nosami/Omnisharp', {'autoload':{'filetypes':['cs']}}
+"  endif "}}}
 
   nnoremap <leader>nbu :Unite neobundle/update -vertical -no-start-insert<cr>
 "}}}
